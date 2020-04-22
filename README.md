@@ -1,24 +1,89 @@
 start to learn ramda.js
-# Math
-## add
-## add
-## dec
-## inc
-## divide
-## multiply
-## mathMod
-## modulo
-## mean
-## median
-## negate
-## product
-## subtract
-## sum
+<!-- TOC -->
 
-# Relation
-## gt/gte
-## lt/lte
-## equals
-## eqBy
-## pathEq
-## propEq
+- [1. Math](#1-math)
+  - [1.1. add](#11-add)
+  - [1.2. add](#12-add)
+  - [1.3. dec](#13-dec)
+  - [1.4. inc](#14-inc)
+  - [1.5. divide](#15-divide)
+  - [1.6. multiply](#16-multiply)
+  - [1.7. mathMod](#17-mathmod)
+  - [1.8. modulo](#18-modulo)
+  - [1.9. mean](#19-mean)
+  - [1.10. median](#110-median)
+  - [1.11. negate](#111-negate)
+  - [1.12. product](#112-product)
+  - [1.13. subtract](#113-subtract)
+  - [1.14. sum](#114-sum)
+- [2. Logic](#2-logic)
+  - [2.1. allPass](#21-allpass)
+  - [2.2. anyPass](#22-anypass)
+  - [2.3. and](#23-and)
+  - [2.4. both](#24-both)
+  - [2.5. xor](#25-xor)
+  - [2.6. or](#26-or)
+  - [2.7. either](#27-either)
+  - [2.8. not](#28-not)
+  - [2.9. complement](#29-complement)
+  - [2.10. defaultTo](#210-defaultto)
+  - [2.11. isEmpty](#211-isempty)
+  - [2.12. ifElse](#212-ifelse)
+  - [2.13. unless](#213-unless)
+  - [2.14. when](#214-when)
+  - [2.15. cond](#215-cond)
+  - [2.16. until](#216-until)
+  - [2.17. pathSatisfies](#217-pathsatisfies)
+  - [2.18. propSatisfies](#218-propsatisfies)
+- [3. Relation](#3-relation)
+  - [3.1. gt/gte](#31-gtgte)
+  - [3.2. lt/lte](#32-ltlte)
+  - [3.3. equals](#33-equals)
+  - [3.4. eqBy](#34-eqby)
+  - [3.5. pathEq](#35-patheq)
+  - [3.6. propEq](#36-propeq)
+
+<!-- /TOC -->
+# 1. Math
+## 1.1. add
+## 1.2. add
+## 1.3. dec
+## 1.4. inc
+## 1.5. divide
+## 1.6. multiply
+## 1.7. mathMod
+## 1.8. modulo
+## 1.9. mean
+## 1.10. median
+## 1.11. negate
+## 1.12. product
+## 1.13. subtract
+## 1.14. sum
+
+# 2. Logic
+## 2.1. allPass
+## 2.2. anyPass
+## 2.3. and
+## 2.4. both
+## 2.5. xor
+## 2.6. or
+## 2.7. either
+## 2.8. not
+## 2.9. complement
+## 2.10. defaultTo
+## 2.11. isEmpty
+## 2.12. ifElse
+## 2.13. unless
+## 2.14. when
+## 2.15. cond
+## 2.16. until
+## 2.17. pathSatisfies
+## 2.18. propSatisfies
+
+# 3. Relation
+## 3.1. gt/gte
+## 3.2. lt/lte
+## 3.3. equals
+## 3.4. eqBy
+## 3.5. pathEq
+## 3.6. propEq
