@@ -3,19 +3,18 @@ start to learn ramda.js
 
 - [1. Math](#1-math)
   - [1.1. add](#11-add)
-  - [1.2. add](#12-add)
-  - [1.3. dec](#13-dec)
-  - [1.4. inc](#14-inc)
-  - [1.5. divide](#15-divide)
-  - [1.6. multiply](#16-multiply)
-  - [1.7. mathMod](#17-mathmod)
-  - [1.8. modulo](#18-modulo)
-  - [1.9. mean](#19-mean)
-  - [1.10. median](#110-median)
-  - [1.11. negate](#111-negate)
-  - [1.12. product](#112-product)
-  - [1.13. subtract](#113-subtract)
-  - [1.14. sum](#114-sum)
+  - [1.2. dec](#12-dec)
+  - [1.3. inc](#13-inc)
+  - [1.4. divide](#14-divide)
+  - [1.5. multiply](#15-multiply)
+  - [1.6. mathMod](#16-mathmod)
+  - [1.7. modulo](#17-modulo)
+  - [1.8. mean](#18-mean)
+  - [1.9. median](#19-median)
+  - [1.10. negate](#110-negate)
+  - [1.11. product](#111-product)
+  - [1.12. subtract](#112-subtract)
+  - [1.13. sum](#113-sum)
 - [2. Logic](#2-logic)
   - [2.1. allPass](#21-allpass)
   - [2.2. anyPass](#22-anypass)
@@ -46,19 +45,18 @@ start to learn ramda.js
 <!-- /TOC -->
 # 1. Math
 ## 1.1. add
-## 1.2. add
-## 1.3. dec
-## 1.4. inc
-## 1.5. divide
-## 1.6. multiply
-## 1.7. mathMod
-## 1.8. modulo
-## 1.9. mean
-## 1.10. median
-## 1.11. negate
-## 1.12. product
-## 1.13. subtract
-## 1.14. sum
+## 1.2. dec
+## 1.3. inc
+## 1.4. divide
+## 1.5. multiply
+## 1.6. mathMod
+## 1.7. modulo
+## 1.8. mean
+## 1.9. median
+## 1.10. negate
+## 1.11. product
+## 1.12. subtract
+## 1.13. sum
 
 # 2. Logic
 ## 2.1. allPass
