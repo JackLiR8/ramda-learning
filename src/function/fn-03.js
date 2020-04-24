@@ -83,12 +83,12 @@ const getMetrics = R.applySpec({
 getMetrics(2, 4)  // => { sum: 6, nested: { mul: 8 } }
 
 // ======================== juxt ====================
-// 将函数列表作用域值列表
+// 将函数列表作用于值列表
 const getRange = R.juxt([Math.min, Math.max]);
 getRange(3, 4, 9, -3); //=> [-3, 9]
 
 // ======================= applyTo =======================
-// 接受一个值，并将一个作用于它
+// 接受一个值，并将一个函数作用于它
 const t42 = R.applyTo(42)
 t42(R.identity) // 42
 t42(R.inc)  // 43

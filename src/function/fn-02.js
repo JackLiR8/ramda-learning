@@ -60,8 +60,8 @@ factorial(3, 2)
 // console.log(count)  // 2
 
 // ======================= composeWith =============================
-// 利用转换函数从右向左执行函数组合，最后一个函数可以是多元函数，其他函数必须是一元函数
-// composeWith 不自动柯里化，转换函数不应用于最后一个参数
+// 利用转换函数从右向左执行函数组合，最后一个(最右)函数可以是多元函数，其他函数必须是一元函数
+// composeWith 不自动柯里化，转换函数不应用于最后一个(最右)参数
 const composeWhileNotNil = R.composeWith(
   (f, res) => R.isNil(res) ? res : f(res)
 )
