@@ -5,6 +5,8 @@
  * 2. partial
  * 3. partialRight
  * 4. memorizeWith
+ * 5. composeWith
+ * 6. pipeWith
  */
 
 // ====================== curry ===================
@@ -53,8 +55,30 @@ const factorial = R.memoizeWith(R.identity, (a, b) => {
 factorial(2, 3)
 factorial(2, 3)
 factorial(2, 3)
-console.log(count)  // 1
+// console.log(count)  // 1
 factorial(3, 2)
-console.log(count)  // 2
+// console.log(count)  // 2
+
+// ======================= composeWith =============================
+// 利用转换函数从右向左执行函数组合，最后一个函数可以是多元函数，其他函数必须是一元函数
+// composeWith 不自动柯里化，转换函数不应用于最后一个参数
+const composeWhileNotNil = R.composeWith(
+  (f, res) => R.isNil(res) ? res : f(res)
+)
+
+composeWhileNotNil([R.inc, R.prop('age')])({age: 1}) //=> 2
+composeWhileNotNil([R.inc, R.prop('age')])({}) //=> undefined
+
+// ====================== pipeWith ============================
+// 利用转换函数从左往右执行函数组合。第一个函数可以是任意元函数（参数个数不限），
+// 其余函数必须是一元函数。
+// pipeWith 不自动柯里化， 转换函数不应用于第一个参数
+const pipeWhileNotNil = R.pipeWith((f, res) => R.isNil(res) ? res : f(res));
+const fpw = pipeWhileNotNil([Math.pow, R.negate, R.inc])
+
+fpw(2, 3) // -7
+pipeWhileNotNil([R.prop('age'), R.inc])({age: 1}) // 2
+pipeWhileNotNil([R.prop('age'), R.inc])({}) // undefined
+
 console.log(
 )

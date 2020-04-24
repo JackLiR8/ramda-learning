@@ -9,6 +9,7 @@
  * 6. useWith
  * 7. T
  * 8. F
+ * 9. addIndex
  */
 
 // ========================== identity ============================
@@ -64,3 +65,10 @@ R.T() // true
 // ======================== F =====================
 // 一个函数，永远返回 false, 忽略传参
 R.F() // false
+
+// ==================== addIndex ===================
+// 向迭代函数的回调函数添加两个新参数： 当前索引和整个列表
+// 通过 addIndex 可将 R.map 转成类似 Array.prototype.map 的函数
+const mapIndexed = R.addIndex(R.map)
+mapIndexed((val, index) => `${index}-${val}`)(['a', 'b', 'c'])
+// [ '0-a', '1-b', '2-c' ]
