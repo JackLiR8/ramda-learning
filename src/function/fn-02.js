@@ -79,6 +79,3 @@ const fpw = pipeWhileNotNil([Math.pow, R.negate, R.inc])
 fpw(2, 3) // -7
 pipeWhileNotNil([R.prop('age'), R.inc])({age: 1}) // 2
 pipeWhileNotNil([R.prop('age'), R.inc])({}) // undefined
-
-console.log(
-)
