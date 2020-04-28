@@ -5,6 +5,7 @@
  * 2. descend
  * 3. construct
  * 4. invoker
+ * 5. flip
  */
 
 // ======================== ascend ============================
@@ -68,3 +69,9 @@ const dog = {
 };
 const speak = R.invoker(0, 'speak');
 speak(dog).then(console.log) //~> 'Woof!'
+
+// ========================= flip ==============================
+// 交换给定函数前两个参数的位置
+const mergeThree = (a, b, c) => [].concat(a, b, c);
+mergeThree(1, 2, 3); //=> [1, 2, 3]
+R.flip(mergeThree)(1, 2, 3); //=> [2, 1, 3]
