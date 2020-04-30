@@ -60,7 +60,7 @@ const numbers = [1, 2, 3, 4];
 const transducer = R.compose(R.map(R.add(1)), R.take(2));
 R.transduce(transducer, R.flip(R.append), [], numbers); //=> [2, 3]
 
-const isOdd = (x) => x % 2 === 1;
+// const isOdd = (x) => x % 2 === 1;
 const firstOddTransducer = R.compose(R.filter(isOdd), R.take(1));
 R.transduce(firstOddTransducer, R.flip(R.append), [], R.range(0, 100)); //=> [1]
 
@@ -82,12 +82,12 @@ R.reduce(R.subtract, 0, [1, 2, 3, 4]) // => ((((0 - 1) - 2) - 3) - 4) = -10
 //     如果是二元素数组，迭代元素会以键值对形式进行合并。
 // 2.  在 transducer 初始化之后，使用 R.reduce 进行迭代操作。
 const numbers1 = [1, 2, 3, 4];
-const transducer = R.compose(R.map(R.add(1)), R.take(2));
+const transducer1 = R.compose(R.map(R.add(1)), R.take(2));
 
-R.into([], transducer, numbers1); //=> [2, 3]
+R.into([], transducer1, numbers1); //=> [2, 3]
 
 const intoArray = R.into([]);
-intoArray(transducer, numbers1); //=> [2, 3]
+intoArray(transducer1, numbers1); //=> [2, 3]
 
 // ======================== reduced ==========================
 // 返回一个封装的值，该值代表 reduce 或 transduce 操作的最终结果。
