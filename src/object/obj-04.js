@@ -6,6 +6,10 @@
  * 3. dissoc
  * 4. dissocPath
  * 5. clone
+ * 6. project
+ * 7. where
+ * 8. whereEq
+ * 9. propSatisfies
  */
 
 // ======================== assoc =========================
@@ -42,3 +46,47 @@ const objects = [{}, {}, {}];
 const objectsClone = R.clone(objects);
 objects === objectsClone; //=> false
 objects[0] === objectsClone[0]; //=> false
+
+// ======================== project ==============================
+// 模拟 SQL 中的 select 语句
+const abby = {name: 'Abby', age: 7, hair: 'blond', grade: 2};
+const fred = {name: 'Fred', age: 12, hair: 'brown', grade: 7};
+const kids = [abby, fred];
+R.project(['name', 'grade'], kids); 
+//=> [{name: 'Abby', grade: 2}, {name: 'Fred', grade: 7}]
+
+// ======================== where ==============================
+// 接受一个测试规范对象和一个待检测对象，如果测试满足规范，则返回 true，否则返回 false。
+// 测试规范对象的每个属性值都必须是 predicate 。每个 predicate 作用于待检测对象对应的
+// 属性值，如果所有 predicate 都返回 true，则 where 返回 true，否则返回 false 。
+// where 非常适合于需要声明式表示约束的函数，比如 filter 和 find 
+
+// pred :: Object -> Boolean
+const pred = R.where({
+  a: R.equals('foo'),
+  b: R.complement(R.equals('bar')),
+  x: R.gt(R.__, 10),
+  y: R.lt(R.__, 20)
+});
+
+pred({a: 'foo', b: 'xxx', x: 11, y: 19}); //=> true
+pred({a: 'xxx', b: 'xxx', x: 11, y: 19}); //=> false
+pred({a: 'foo', b: 'bar', x: 11, y: 19}); //=> false
+pred({a: 'foo', b: 'xxx', x: 10, y: 19}); //=> false
+pred({a: 'foo', b: 'xxx', x: 11, y: 20}); //=> false
+
+// ======================== whereEq ==============================
+// 接受一个测试规范对象和一个待检测对象，如果测试满足规范，则返回 true，否则返回 false。
+// whereEq 是 where 的一种特殊形式。
+// pred :: Object -> Boolean
+const pred = R.whereEq({a: 1, b: 2});
+
+pred({a: 1});              //=> false
+pred({a: 1, b: 2});        //=> true
+pred({a: 1, b: 2, c: 3});  //=> true
+pred({a: 1, b: 1});        //=> false
+
+// ======================= propSatisfies ========================
+// 如果指定的对象属性满足 predicate，返回 true；否则返回 false。
+// 可以使用 R.where 进行多个属性的判断。
+R.propSatisfies(x => x > 0, 'x', {x: 1, y: 2}); //=> true
